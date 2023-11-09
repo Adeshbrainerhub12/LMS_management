@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "allowImportingTsExtensions": true,
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["types/*"]
+    },
+    "lib": ["DOM", "ES6", "DOM.Iterable"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
