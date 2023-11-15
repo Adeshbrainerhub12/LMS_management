@@ -2,15 +2,16 @@
  * Environments variables declared here.
  */
 
-import dotenv from "dotenv"
-dotenv.config()
+import dotenv from "dotenv";
+dotenv.config();
 export default {
   Port: process.env.PORT ?? "",
   MONGO_URL: process.env.MONGO_URL ?? "",
-  JWT: {
-    SecretKey: process.env.JWT_SECRETKEY ?? "",
+  Jwt: {
+    Secret: process.env.JWT_SECRETKEY ?? "",
+    ForgetTokenSecret: process.env.ForgetTokenSecret ?? "",
   },
   BackendUrl: {
-    BACKEND_URL:process.env.BACKEND_URL,
+    BACKEND_URL: process.env.BACKEND_URL,
   },
 } as const;
