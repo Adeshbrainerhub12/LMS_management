@@ -2,7 +2,7 @@
  * Miscellaneous shared classes go here.
  */
 
-import HttpStatusCodes from '../constant/HttpStatusCodes';
+import HttpStatusCodes from '../constant/ResponseStatusCode';
 
 
 /**

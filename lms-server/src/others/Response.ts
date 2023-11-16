@@ -1,4 +1,4 @@
-import HttpStatusCodes from "../constant/HttpStatusCodes";
+import HttpStatusCodes from "../constant/ResponseStatusCode";
 
 export class CommonResponse<T> {
   status = 0;

@@ -12,13 +12,6 @@ const sequelizeConnection = new Sequelize(dbName, dbUser, dbPassword, {
   dialect: "postgres",
 });
 
-export const connection = async () => {
-  try {
-    await sequelizeConnection.authenticate();
-    logger.info("Database is connected with : lmsManagement");
-  } catch (error) {
-    logger.info("Database is not connected with : lmsManagement");
-  }
-};
+
 
 export default sequelizeConnection;
