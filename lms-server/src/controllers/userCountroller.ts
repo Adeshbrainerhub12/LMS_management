@@ -95,7 +95,12 @@ export const login = async (
 ) => {
   const { email, password } = req.body;
   try {
-    const user = await User.findOne({ where: { email } });
+    const user = await User.findOne({
+      where: {
+        email,
+      },
+    });
+    console.log()
     if (!user) {
       throw new CommonResponse(
         HttpStatusCodes.NOT_FOUND,
@@ -104,8 +109,34 @@ export const login = async (
         true
       );
     }
-    
+    const passCheck =await  HashPassword.decodeHashPassword(password,user?.password)
+    if (!passCheck) {
+      throw new CommonResponse(
+        HttpStatusCodes.BAD_REQUEST,
+        "Invalid password",
+        null,
+        true
+      );
+    }
+    const token = AccessTokenManager.generateToken({
+      email,
+      _id:user.id,
+      loggedInAt: new Date(),
+    });
+    return res.status(HttpStatusCodes.OK).json(
+      new CommonResponse(
+        HttpStatusCodes.OK,
+        "User Successfully LoggedIn",
+        {
+          accessToken: token,
+          userInformation: user,
+          loggedInAt: new Date(),
+        },
+        false
+      )
+    );
   } catch (error) {
     return ErrorHandler(res, error);
   }
 };
+

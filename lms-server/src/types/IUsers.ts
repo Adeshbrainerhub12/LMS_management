@@ -10,6 +10,7 @@ export interface IRegister extends ILogin {
 }
 
 export interface IUser {
+  id?:string;  
   username: string;
   email: string;
   password: string;
