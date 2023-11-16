@@ -1,4 +1,4 @@
-import EnvVars from "../constant/EnvVars";
+import EnvVars from "../constant/EnvVars.ts";
 import { IForgetPasswordToken, IUserToken } from "../types/IUsers.ts";
 import JWTManager from "jsonwebtoken";
 

@@ -1,10 +1,20 @@
 import { DataTypes } from "sequelize";
 
-DataTypes
+export interface ILogin {
+  email: string;
+  password: string;
+
+}
+export interface IRegister extends ILogin {
+  name: string;
+}
+
 export interface IUser {
   username: string;
   email: string;
   password: string;
+  image?:string,
+  refreshToken:string,
 }
 export interface IForgetPassword {
   email: string;
